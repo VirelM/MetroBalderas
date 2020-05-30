@@ -1,26 +1,74 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './Navbar';
+import Menu from './Menu';
+import {Route} from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+export default class App extends React.Component{
+  state = {
+    english:{},
+    spanish:[
+      {
+        name: 'Huvos con Salchicha',
+        price: '$3.50'
+      },
+      {
+        name:'Huevos con Jamon',
+        price: '$3.50'
+      },
+      {
+        name: 'Huevos a la Mexiacana',
+        price:'$3.50',
+      },
+      {
+        name: 'Huevos Rancheros',
+        price: '$3.50'
+      },
+      {
+        name: 'Huevos con Chorizo',
+        price: '$3.50'
+      },
+      {
+        name:'Huevos Estellados o Revueltos',
+        price:'$3.00'
+      },
+      {
+        name:'Chilaquiles con Bistec',
+        price:'$4.75'
+      },
+      {
+        name: 'Chilaquiles con Huevos',
+        price:'$4.75'
+      },
+      {
+        name:'Chilaquiles Solos',
+        price: ' $3.25'
+      },
+      {
+        name:'Enchiladas con Pollo',
+        price: '$4.75'
+      },
+      {
+        name:'Torta de Milanesa',
+        price:'$3.60'
+      },
+      {
+        name: 'Torta Balderas',
+        price: '$4.50'
+      }
+    ]
+  }
+
+  render(){
+    let menu= this.state.spanish;
+    return(
+    
+      <div>
+        <Route path="/" component={Navbar}></Route>
+        <Route exact path="/menu" render={props=>
+        <Menu {...props} menu={menu}></Menu>}/>
+      </div>
+    )
+  }
 }
-
-export default App;

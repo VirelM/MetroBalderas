@@ -7,6 +7,30 @@
   pointer-events: none;
 }
 
+header{
+  text-align: center;
+}
+
+.menu{
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  font-size: 20px;
+  background-color: pink;
+}
+
+.menu li{
+  width: 7%;
+}
+
+.menu_container{
+  display: flex;
+  background-color: lightgrey;
+}
+
+.breakfast1, .breakfast2{
+  width: 50%;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
