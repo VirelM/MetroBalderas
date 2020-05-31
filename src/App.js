@@ -10,6 +10,12 @@ export default class App extends React.Component{
     english:{},
     spanish:[
       {
+        name: 'Huevos Rancheros',
+        price: '$3.50',
+        img: '../metrobalderas/desayRacheros-negro.jpg',
+        cover: 'breakfast',
+      },
+      {
         name: 'Huvos con Salchicha',
         price: '$3.50'
       },
@@ -20,10 +26,6 @@ export default class App extends React.Component{
       {
         name: 'Huevos a la Mexiacana',
         price:'$3.50',
-      },
-      {
-        name: 'Huevos Rancheros',
-        price: '$3.50'
       },
       {
         name: 'Huevos con Chorizo',
@@ -51,12 +53,27 @@ export default class App extends React.Component{
       },
       {
         name:'Torta de Milanesa',
-        price:'$3.60'
+        price:'$3.60',
+        img: '../metrobalderas/pambazo.png',
+        cover: 'Torta'
       },
       {
         name: 'Torta Balderas',
         price: '$4.50'
+      },
+      {
+        name:'Hurache Bistec',
+        price: '$4.25',
+        img: '../metrobalderas/hurache de bistec.jpg',
+        cover: 'Hurache'
+      },
+      {
+        name:'Tacos de Asada',
+        price:'$1.35',
+        img: '../metrobalderas/taco carnitas.jpg',
+        cover:'Taco'
       }
+      
     ]
   }
 
@@ -68,6 +85,7 @@ export default class App extends React.Component{
         <Route path="/" component={Navbar}></Route>
         <Route exact path="/menu" render={props=>
         <Menu {...props} menu={menu}></Menu>}/>
+        <img alt='pambazo' src="/public/metrobalderas/pambazo.png"></img>
       </div>
     )
   }
