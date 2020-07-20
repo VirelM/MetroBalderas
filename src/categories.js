@@ -1,14 +1,16 @@
 import React from 'react';
-
+import {Link} from 'react-router-dom';
 
 
 export default class Categories extends React.Component{
     render(){
         return(
-            <div>
+            <div className="categoryItem">
                 {this.props.cover}
-                <img alt="meaninful text" src={this.props.img}></img>
-            </div>
+                <Link to="/menu/breakfast">
+                <img alt="meaninful text" className="menuCategories" src={this.props.img}></img>
+                </Link>
+                </div>
         )
     }
 }

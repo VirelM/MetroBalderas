@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Navbar from './Navbar';
 import Menu from './Menu';
+import Breakfast from './Breakfast';
 import {Route} from 'react-router-dom';
 
 
@@ -10,10 +11,17 @@ export default class App extends React.Component{
     english:{},
     spanish:[
       {
+        name:'Huevos Sencilos',
+        price:'$3.00',
+        img: '../img/desayEstrellados-anaranj(4).jpg',
+        category:'breakfast'
+      },
+      {
         name: 'Huevos Rancheros',
         price: '$3.50',
-        img: '../metrobalderas/desayRacheros-negro.jpg',
+        img: '../img/desayRacheros-negro.jpg',
         cover: 'breakfast',
+        category:'breakfast'
       },
       {
         name: 'Huvos con Salchicha',
@@ -54,8 +62,8 @@ export default class App extends React.Component{
       {
         name:'Torta de Milanesa',
         price:'$3.60',
-        img: '../metrobalderas/pambazo.png',
-        cover: 'Torta'
+        img: '../img/pambazo.jpg',
+        cover: 'Tortas'
       },
       {
         name: 'Torta Balderas',
@@ -64,28 +72,134 @@ export default class App extends React.Component{
       {
         name:'Hurache Bistec',
         price: '$4.25',
-        img: '../metrobalderas/hurache de bistec.jpg',
-        cover: 'Hurache'
+        img: '../img/huracheDeBistec.jpg',
+        cover: 'Huraches'
       },
       {
         name:'Tacos de Asada',
         price:'$1.35',
-        img: '../metrobalderas/taco carnitas.jpg',
-        cover:'Taco'
-      }
+        img: '../img/tacosCarnitas.jpg',
+        cover:'Tacos'
+      },
+      {
+        name:'Quesadilla de Queso',
+        price:'$2.40',
+        img: '../img/quesadilla.jpg',
+        cover:'Quesadillas'
+      },
+      {
+        name:'Sope de Asada',
+        price:'$3.00',
+        img: '../img/sopeAsada.jpg',
+        cover: 'Sopes'
+      },
+      {
+        name:'Flautas de Pollo',
+        price:'$2.75',
+        img: '../img/flautas-negro+completo(5).jpg',
+        cover:'Flautas'
+      },
+      {
+        name:'Chilaquiles con Huevo',
+        price:'$4.75',
+        img: '../img/chilaquilesConHuevo.jpg',
+        cover:'Chilaquiles'
+      },
+      {
+        name:'',
+        price:'',
+        img: '',
+      },
+      {
+        name:'',
+        price:'',
+        img: '',
+      },
+      {
+        name:'',
+        price:'',
+        img: '',
+      },
+      {
+        name:'',
+        price:'',
+        img: '',
+      },
+      {
+        name:'',
+        price:'',
+        img: '',
+      },
+      {
+        name:'',
+        price:'',
+        img: '',
+      },
+      {
+        name:'',
+        price:'',
+        img: '',
+      },
+      {
+        name:'',
+        price:'',
+        img: '',
+      },
+      {
+        name:'',
+        price:'',
+        img: '',
+      },
+      {
+        name:'',
+        price:'',
+        img: '',
+      },
+      {
+        name:'',
+        price:'',
+        img: '',
+      },
+      {
+        name:'',
+        price:'',
+        img: '',
+      },
+      {
+        name:'',
+        price:'',
+        img: '',
+      },
+      {
+        name:'',
+        price:'',
+        img: '',
+      },
+      {
+        name:'',
+        price:'',
+        img: '',
+      },
+      {
+        name:'',
+        price:'',
+        img: '',
+      },
       
     ]
   }
 
   render(){
     let menu= this.state.spanish;
+    //public\metrobalderas\pambazo.png
     return(
     
       <div>
         <Route path="/" component={Navbar}></Route>
         <Route exact path="/menu" render={props=>
         <Menu {...props} menu={menu}></Menu>}/>
-        <img alt='pambazo' src="/public/metrobalderas/pambazo.png"></img>
+        <Route exact path="/menu/breakfast" render={props=>
+        <Breakfast {...props} menu={menu}></Breakfast>}/>
       </div>
     )
   }
